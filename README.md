@@ -1,4 +1,4 @@
-# Containerized integration testing for Boxed API.
+# Containerized integration testing for Boxed API
 
 This example shows the integration tests for boxed-templates running against a SQL Server container instead of a mock repository.
 
@@ -6,6 +6,8 @@ I might write a blog post but here are some good ones to get you started:
 
 - https://wright-development.github.io/post/using-docker-for-net-core/
 - Alternative way using a docker C# client https://medium.com/@bappertdennis/containerized-integration-testing-for-asp-net-core-95807f107297
+
+Boxed: https://github.com/Dotnet-Boxed/Templates/blob/master/Docs/API.md
 
 ## General steps I did
 

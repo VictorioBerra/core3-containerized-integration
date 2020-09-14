@@ -9,13 +9,20 @@ I might write a blog post but here are some good ones to get you started:
 
 ## General steps I did
 
-- Add efcore.
-- Update repos to use EF core.
-- Update program.cs to seed data.
-- Add docker-compose, and dockerfile for tests.
+- `dotnet new api -do --name DockerTemplate`
+- Add efcore stuff
+- Update repos to use EF core
+- Update program.cs to seed data
+- Add docker-compose, and dockerfile for tests
 - Modify dockerfile for api and remove `dotnet test` stuff
 
 Not all tests pass, just enough to prove the concept works.
+
+## testing
+
+- `git clone https://github.com/VictorioBerra/core3-containerized-integration.git`
+- `cd core3-containerized-integration`
+- `docker-compose -f .\Tests\DockerTemplate.IntegrationTest\docker-compose-integration.yml up --remove-orphans --build`
 
 ## See docker-compose-integration for ENV vars
 

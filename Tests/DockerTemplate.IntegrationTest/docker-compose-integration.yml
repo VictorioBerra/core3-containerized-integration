@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  integration:
+    build:
+      context: ../../
+      dockerfile: Tests/DockerTemplate.IntegrationTest/Dockerfile
+    environment:
+      # Disable in-memory tests
+      - UseSqlServer=1
+      # Trigger seeding
+      - ContainerIntegrationTests=1
+      - ConnectionStrings__DefaultConnection=Server=db;Database=cars;User Id=sa;Password=Password1_;
+    entrypoint: ./wait_for_it.sh db:1433 -t 0 -- dotnet test --no-build --configuration=Release
+    depends_on:
+      - db
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+        SA_PASSWORD: "Password1_"
+        ACCEPT_EULA: "Y"
